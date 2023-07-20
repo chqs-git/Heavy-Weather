@@ -1,0 +1,14 @@
+.image-gallery > img {
+    width: 50%;
+}
+
+.image-gallery  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: center;
+    width: auto;
+    min-width: 50%;
+    max-width: 100%;
+  }
