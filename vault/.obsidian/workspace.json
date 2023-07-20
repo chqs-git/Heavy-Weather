@@ -11,11 +11,14 @@
             "id": "e96d9b9d85740a20",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Heavy Weather.md",
-                "mode": "source",
-                "source": false
+                "file": "canvas.canvas",
+                "viewState": {
+                  "x": 551.5723270440253,
+                  "y": 1029.9056603773588,
+                  "zoom": -1.2758316802979082
+                }
               }
             }
           }
@@ -85,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Heavy Weather.md",
+                "file": "src/Approach to challenges.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Heavy Weather.md",
+                "file": "src/Approach to challenges.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Heavy Weather.md"
+                "file": "src/Approach to challenges.md"
               }
             }
           },
@@ -150,7 +153,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 581.5
+    "width": 382.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -165,8 +169,9 @@
   },
   "active": "e96d9b9d85740a20",
   "lastOpenFiles": [
-    "Heavy Weather.md",
+    "src/Technologies.md",
     "canvas.canvas",
+    "Heavy Weather.md",
     "src/Approach to challenges.md",
     "src/Cloud Shape.md",
     "Cloud flood algorithm.md",
