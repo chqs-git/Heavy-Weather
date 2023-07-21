@@ -4,20 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "1c54a571fc3d755a",
+        "id": "f0ceb7205c3ed717",
         "type": "tabs",
         "children": [
           {
-            "id": "e96d9b9d85740a20",
+            "id": "677c25641c60367d",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
                 "file": "canvas.canvas",
                 "viewState": {
-                  "x": 551.5723270440253,
-                  "y": 1029.9056603773588,
-                  "zoom": -1.2758316802979082
+                  "x": 800.1295731707318,
+                  "y": 899.0579268292685,
+                  "zoom": -1.6462001302430238
                 }
               }
             }
@@ -88,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/Approach to challenges.md",
+                "file": "canvas.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "src/Approach to challenges.md",
+                "file": "canvas.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "src/Approach to challenges.md"
+                "file": "canvas.canvas"
               }
             }
           },
@@ -167,11 +167,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "e96d9b9d85740a20",
+  "active": "677c25641c60367d",
   "lastOpenFiles": [
-    "src/Technologies.md",
-    "canvas.canvas",
     "Heavy Weather.md",
+    "docs/references/A.webp",
+    "canvas.canvas",
+    "src/Technologies.md",
     "src/Approach to challenges.md",
     "src/Cloud Shape.md",
     "Cloud flood algorithm.md",
@@ -192,7 +193,6 @@
     "docs/gallery/cloud.png",
     "docs/gallery/sporting.png",
     "docs/gallery/banner.png~",
-    "docs/references/A.webp",
     "docs/blabla.md",
     "docs/references",
     "docs/gallery",
