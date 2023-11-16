@@ -14,7 +14,7 @@ banner_y: 0.55
 ## Git Repository
 > opensource repository for the *Heavy Weather* project.
 
-*insert github repo*
+![[https://github.com/chqs-git/Heavy-Weather]](repository link)
 
 ##
 

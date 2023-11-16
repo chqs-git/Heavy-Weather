@@ -9,13 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/random-seed": "^0.3.3",
     "@types/three": "^0.154.0",
+    "random-seed": "^0.3.0",
     "solid-js": "^1.7.8",
     "three": "^0.154.0"
   },
   "devDependencies": {
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
+    "vite-plugin-glsl": "^1.1.2",
     "vite-plugin-solid": "^2.7.0"
   }
 }

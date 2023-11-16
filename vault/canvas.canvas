@@ -1,11 +1,11 @@
 {
 	"nodes":[
 		{"type":"file","file":"src/References.md","id":"f36ef9228d5c318f","x":240,"y":960,"width":880,"height":1040},
-		{"type":"file","file":"Heavy Weather.md","id":"c3fae43d27d55cb9","x":-1080,"y":30,"width":1100,"height":640},
+		{"type":"file","file":"Heavy Weather.md","id":"c3fae43d27d55cb9","x":-1080,"y":30,"width":1100,"height":710},
 		{"type":"file","file":"src/Cloud Shape.md","id":"a754ed453e1ee13a","x":290,"y":-40,"width":780,"height":780},
 		{"type":"file","file":"src/generators/Cloud flood.md","id":"2d2211895673f461","x":1520,"y":-100,"width":760,"height":400},
 		{"type":"file","file":"src/generators/Worley Noise.md","id":"91ecb800a7586831","x":1520,"y":387,"width":760,"height":1213},
-		{"id":"0e05d89bf130fb7a","x":-1080,"y":794,"width":1100,"height":806,"type":"file","file":"src/Approach to challenges.md"}
+		{"id":"0e05d89bf130fb7a","type":"file","file":"src/Approach to challenges.md","x":-1080,"y":794,"width":1100,"height":806}
 	],
 	"edges":[
 		{"id":"362ea81d0e038289","fromNode":"a754ed453e1ee13a","fromSide":"left","toNode":"c3fae43d27d55cb9","toSide":"right"},

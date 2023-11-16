@@ -4,21 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "f0ceb7205c3ed717",
+        "id": "dc54d5bdf3322bc1",
         "type": "tabs",
         "children": [
           {
-            "id": "677c25641c60367d",
+            "id": "ebfaed00668233c0",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "canvas.canvas",
-                "viewState": {
-                  "x": 800.1295731707318,
-                  "y": 899.0579268292685,
-                  "zoom": -1.6462001302430238
-                }
+                "file": "Heavy Weather.md",
+                "mode": "preview",
+                "source": false
               }
             }
           }
@@ -88,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "canvas.canvas",
+                "file": "Heavy Weather.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "canvas.canvas",
+                "file": "Heavy Weather.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "canvas.canvas"
+                "file": "Heavy Weather.md"
               }
             }
           },
@@ -167,16 +164,18 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "677c25641c60367d",
+  "active": "ebfaed00668233c0",
   "lastOpenFiles": [
-    "Heavy Weather.md",
-    "docs/references/A.webp",
+    "src/generators/Worley Noise.md",
     "canvas.canvas",
+    "Heavy Weather.md",
+    "Untitled.md",
+    "Code+.md",
+    "docs/references/A.webp",
     "src/Technologies.md",
     "src/Approach to challenges.md",
     "src/Cloud Shape.md",
     "Cloud flood algorithm.md",
-    "src/generators/Worley Noise.md",
     "src/References.md",
     "docs/miscelaneous/worley_noise.jpg",
     "docs/miscelaneous",
