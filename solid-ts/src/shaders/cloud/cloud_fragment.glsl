@@ -11,7 +11,6 @@ uniform vec2 Dimensions;
 uniform vec3 BoundsMin;
 uniform vec3 BoundsMax;
 uniform vec3 CamPos;
-uniform vec3 BoxPos;
 
 // Cloud
 uniform float numSteps;
@@ -148,7 +147,7 @@ float lightMarch(vec3 pos) {
 
 void main(void) {
     float ratio = Dimensions.x / Dimensions.y;
-    vec3 camDir = getRayDir(CamPos, normalize(BoxPos - CamPos), vUV, ratio);
+    vec3 camDir = getRayDir(CamPos, normalize(vec3(0, .1, 0) - CamPos), vUV, ratio);
     vec3 rayInfo = rayBoxDst(BoundsMin, BoundsMax, CamPos, camDir);
     float dstToBox = rayInfo.x;
     float dstInsideBox = rayInfo.y;

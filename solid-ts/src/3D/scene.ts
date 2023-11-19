@@ -17,7 +17,6 @@ export function Scene(width: number, height: number, canvas: HTMLCanvasElement, 
         "camera", Math.PI / 2, Math.PI / 3.2, 1.25, BABYLON.Vector3.Zero(), scene
     );
     camera.attachControl(canvas)
-    camera.position.z = 2;
 
     // setup raymarching container
     const box = { position: new BABYLON.Vector3(0, 0, 0), scaling: new BABYLON.Vector3(1, 1, 1) };
