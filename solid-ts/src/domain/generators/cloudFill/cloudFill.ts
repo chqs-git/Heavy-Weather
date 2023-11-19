@@ -1,4 +1,4 @@
-import { Vector3 } from "three";
+import { Vector3 } from "babylonjs";
 import { create, RandomSeed } from "random-seed";
 import { MapHash } from "../../utils/voxels/MapHash.ts";
 import { Queue } from "../../utils/queue.ts";

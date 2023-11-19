@@ -19,9 +19,7 @@ function App() {
         </a>
       </div>
       <h1>Heavy Weather</h1>
-      <Editor  
-        width={window.innerWidth * .63} 
-        height={window.innerHeight * .69} 
+      <Editor
         cloud={cloud}
         onUpdate={(c: Cloud) => setCloud(c)} // function to update cloud
       />

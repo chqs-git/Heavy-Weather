@@ -27,7 +27,6 @@ uniform sampler2D BlueTex;
 uniform vec3 lightCol;
 uniform vec3 lightDir;
 uniform vec3 shadowCol;
-uniform float numStepsLight;
 uniform float lightAbsorptionThroughCloud;
 uniform float darknessThreshold;
 uniform float powderStrength;
@@ -35,6 +34,7 @@ uniform float powderStrength;
 #define CAM_FOV_FACTOR 1.2
 #define offsetStrength 0.05
 #define lightAbsorptionTowardSun .01
+#define numStepsLight 12.
 #define phaseX .5
 #define phaseY .5
 #define phaseZ .6
@@ -198,8 +198,8 @@ void main(void) {
     }
     
     vec3 backgroundCol = texture(textureSampler, vUV).xyz;
-    vec3 cloudCol = lightCol * lightEnergy + shadowCol * shadowEnergy;
+    vec3 cloudCol = lightCol *lightEnergy + shadowCol * shadowEnergy;
     vec3 color = backgroundCol * transmittance + cloudCol;
 
-    gl_FragColor = vec4(texture(BlueTex, vUV), 1.);
+    gl_FragColor = vec4(color, 1.);
 }

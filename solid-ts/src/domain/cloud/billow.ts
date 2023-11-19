@@ -30,7 +30,7 @@ export class Billow {
 
     static default(): Billow {
         return new Billow(
-            180,
+            125,
             "default",
             2,
             3,

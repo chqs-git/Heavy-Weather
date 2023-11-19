@@ -1,5 +1,5 @@
 import { JSX } from "solid-js/jsx-runtime";
-import { Vector3 } from "three"
+import { Vector3 } from "babylonjs"
 
 export interface Interactable<T> {
   value: T
@@ -120,10 +120,14 @@ export class Vector3Interactable implements Interactable<Vector3> {
     this.value = value;
   }
 
+  setX(vector: Vector3, x: number): Vector3 { return new Vector3(x, vector.y, vector.z);}
+  setY(vector: Vector3, y: number): Vector3 { return new Vector3(vector.x, y, vector.z);}
+  setZ(vector: Vector3, z: number): Vector3 { return new Vector3(vector.x, vector.y, z);}
+
   createElement(onUpdate: () => void): JSX.Element {
-    const onChangeX = (x: number) =>  {this.value = this.value.setX(x); onUpdate();}
-    const onChangeY = (y: number) =>  {this.value = this.value.setY(y); onUpdate();}
-    const onChangeZ = (z: number) =>  {this.value = this.value.setZ(z); onUpdate();}
+    const onChangeX = (x: number) =>  {this.value = this.setX(this.value, x); onUpdate();}
+    const onChangeY = (y: number) =>  {this.value = this.setY(this.value, y); onUpdate();}
+    const onChangeZ = (z: number) =>  {this.value = this.setZ(this.value, z); onUpdate();}
   
     return (
         <div class="interactable">

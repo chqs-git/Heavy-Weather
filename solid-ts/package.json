@@ -9,11 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/babylon": "^6.16.9",
     "@types/random-seed": "^0.3.3",
-    "@types/three": "^0.154.0",
+    "babylonjs": "^6.30.0",
     "random-seed": "^0.3.0",
-    "solid-js": "^1.7.8",
-    "three": "^0.154.0"
+    "solid-js": "^1.7.8"
   },
   "devDependencies": {
     "typescript": "^5.0.2",

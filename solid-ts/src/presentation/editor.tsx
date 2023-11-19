@@ -1,32 +1,33 @@
-import { Scene } from '../domain/scene.ts'
+import { Scene } from '../3D/scene.ts'
 import './css/editor.css'
 import Folder from "./folder.tsx";
 import { Cloud } from "../domain/cloud/cloud.ts"
 import { Accessor } from 'solid-js';
 import { BillowInteractable } from "./utils/interactable/cloud/billowInteractable";
 import { LightingInteractable } from "./utils/interactable/cloud/lightingInteractable";
+import { onMount } from "solid-js";
 
-
-function Editor(props: {width: number, height: number, cloud: Accessor<Cloud>, onUpdate: (cloud: Cloud) => void}) {
-  const { width, height, cloud, onUpdate } = props;
+function Editor(props: {cloud: Accessor<Cloud>, onUpdate: (cloud: Cloud) => void}) {
+  const { cloud, onUpdate } = props;
   const initialCloud = cloud();
   const lighting = new LightingInteractable(initialCloud.lighting);
   const billow = new BillowInteractable(initialCloud.billow);
 
   const onChangeCallback = () => onUpdate(buildCloud());
+  onMount(() => {
+    const canvas = document.querySelector("canvas");
+    if (canvas) Scene(canvas.width, canvas.height, canvas, cloud);
+  });
   
   return (
     <>
       <div class="row">
             <div class="render">
-              <Scene
-                width={width} 
-                height={height} 
-                cloud={cloud}
-              />
+              <canvas/>
             </div>
             
             <div class="settings">
+              <div id="fps">0</div>
               <Folder title={"Cloud Shape"} details={{...billow}} onUpdate={onChangeCallback}/>
               <Folder title={"Lighting"} details={{...lighting}} onUpdate={onChangeCallback}/>
             </div>

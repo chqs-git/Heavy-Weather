@@ -1,4 +1,4 @@
-import { Vector3, Color } from "three"
+import { Vector3, Color3 } from "babylonjs"
 
 
 export class Lighting {
@@ -8,13 +8,13 @@ export class Lighting {
     detailDensityMultiplier : number
 
     lightDir: Vector3
-    lightColor: Color
-    shadowColor: Color
+    lightColor: Color3
+    shadowColor: Color3
     lightAbsorptionThroughCloud: number
     darknessThreshold: number
     darknessOverlay: number
     powderStrength: number
-    backgroundColor: Color
+    backgroundColor: Color3
 
     constructor(
         scale: number,
@@ -22,13 +22,13 @@ export class Lighting {
         detailDensityThreshold: number,
         detailDensityMultiplier : number,
         lightDir: Vector3,
-        lightColor: Color,
-        shadowColor: Color,
+        lightColor: Color3,
+        shadowColor: Color3,
         lightAbsorptionThroughCloud: number,
         darknessThreshold: number,
         darknessOverlay: number,
         powderStrength: number,
-        backgroundColor: Color
+        backgroundColor: Color3
         ) {
             this.lightDir = lightDir
             this.scale = scale
@@ -51,13 +51,13 @@ export class Lighting {
                 0,
                 1,
                 new Vector3(.5, -1, 0),
-                new Color(1, 1, 1),
-                new Color(20 / 225, 20 / 225, 20 / 225),
+                new Color3(0.9, 0.9, 0.9),
+                new Color3(20 / 255, 20 / 255, 20 / 255),
                 .85,
                 5,
                 .85,
                 .1,
-                new Color(51, 51, 76)
+                new Color3(51 / 255, 51 / 255, 76 / 255)
             )
         }
 }
