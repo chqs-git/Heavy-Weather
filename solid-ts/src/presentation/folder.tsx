@@ -1,7 +1,16 @@
 import { Interactable } from "./utils/interactable/interactable.ts"
+import { BillowInteractable } from "./utils/interactable/cloud/billowInteractable";
+import { LightingInteractable } from "./utils/interactable/cloud/lightingInteractable";
 
-function Folder(props: {title: string, details: { [key: string]: Interactable<any> }, onUpdate: () => void}) {
-  const { title, details, onUpdate } = props;
+export type onUpdateInteractable = (data: BillowInteractable | LightingInteractable) => void
+
+function Folder(props: {
+  title: string, 
+  interactable: BillowInteractable | LightingInteractable, 
+  onUpdate: onUpdateInteractable
+  }) {
+  const { title, interactable, onUpdate } = props;
+  const details: { [key: string]: Interactable<any> } = {...interactable};
 
   return (
   <>
@@ -11,7 +20,7 @@ function Folder(props: {title: string, details: { [key: string]: Interactable<an
               <h2>{title}</h2>
           </label>
           <div class="details">
-              {Object.keys(details).map(key => (<Item key={key} interactable={details[key]} onUpdate={onUpdate}/>)) }
+              {Object.keys(details).map(key => (<Item key={key} interactable={details[key]} onUpdate={() => onUpdate(interactable)}/>)) }
           </div>
       </li>
   </>

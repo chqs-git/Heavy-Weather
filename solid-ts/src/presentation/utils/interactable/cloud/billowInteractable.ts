@@ -23,4 +23,17 @@ export class BillowInteractable {
     this.decay = new SliderInteractable(billow.resolution, 25, 144);
     this.numberOfIslands = new NumberInteractable(billow.numberOfIslands);
   }
+
+  toBillow() {
+    return new Billow(
+      this.resolution.value,
+      this.worleySeed.value,
+      this.numCells.value,
+      this.octaves.value,
+      this.persistence.value,
+      this.expanseSeed.value,
+      this.decay.value,
+      this.numberOfIslands.value
+    );
+  }
 }

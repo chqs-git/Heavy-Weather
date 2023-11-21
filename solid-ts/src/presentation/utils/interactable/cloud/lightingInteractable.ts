@@ -1,5 +1,5 @@
 import { Lighting } from "../../../../domain/cloud/lighting"
-import { Vector3 } from "babylonjs"
+import { Color3, Vector3 } from "babylonjs"
 import { Interactable, SliderInteractable, Vector3Interactable, ColorInteractable } from "../interactable";
 
 export class LightingInteractable {
@@ -30,5 +30,22 @@ export class LightingInteractable {
         this.darknessOverlay = new SliderInteractable(lighting.darknessOverlay, 0, 1);
         this.powderStrength = new SliderInteractable(lighting.powderStrength, 0, 1);
         this.backgroundColor = new ColorInteractable(lighting.backgroundColor.toHexString());
+    }
+
+    toLighting() {
+      return new Lighting(
+        this.scale.value,
+        this.densityMultiplier.value,
+        this.detailDensityThreshold.value,
+        this.detailDensityMultiplier.value,
+        this.lightDir.value,
+        Color3.FromHexString(this.lightColor.value),
+        Color3.FromHexString(this.shadowColor.value),
+        this.lightAbsorptionThroughCloud.value,
+        this.darknessThreshold.value,
+        this.darknessOverlay.value,
+        this.powderStrength.value,
+        Color3.FromHexString(this.backgroundColor.value)
+      )
     }
 }
