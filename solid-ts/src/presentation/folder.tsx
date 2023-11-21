@@ -5,14 +5,15 @@ function Folder(props: {title: string, details: { [key: string]: Interactable<an
 
   return (
   <>
-      <div class="folder">
-          <div class="title">
+      <li class="folder">
+          <input type="checkbox" name="folder" id={title}/>
+          <label class="title" for={title}>
               <h2>{title}</h2>
-          </div>
+          </label>
           <div class="details">
               {Object.keys(details).map(key => (<Item key={key} interactable={details[key]} onUpdate={onUpdate}/>)) }
           </div>
-      </div>
+      </li>
   </>
   )
 }

@@ -26,11 +26,11 @@ function Editor(props: {cloud: Accessor<Cloud>, onUpdate: (cloud: Cloud) => void
               <canvas/>
             </div>
             
-            <div class="settings">
+            <ul class="settings">
               <div id="fps">0</div>
               <Folder title={"Cloud Shape"} details={{...billow}} onUpdate={onChangeCallback}/>
               <Folder title={"Lighting"} details={{...lighting}} onUpdate={onChangeCallback}/>
-            </div>
+            </ul>
       </div>
     </>
   )
