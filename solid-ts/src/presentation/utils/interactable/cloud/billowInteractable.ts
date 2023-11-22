@@ -1,9 +1,11 @@
 import { Billow } from "../../../../domain/cloud/billow"
+import { Cloud } from "../../../../domain/cloud/cloud";
 import { Interactable, SliderInteractable, TextInteractable, NumberInteractable } from "../interactable";
+import { InteractableSettings } from "./InteractableSettings";
 
 
 
-export class BillowInteractable {
+export class BillowInteractable implements InteractableSettings {
   "resolution": Interactable<number>
   "worleySeed": Interactable<string>
   "numCells": Interactable<number>
@@ -23,8 +25,19 @@ export class BillowInteractable {
     this.decay = new SliderInteractable(billow.resolution, 25, 144);
     this.numberOfIslands = new NumberInteractable(billow.numberOfIslands);
   }
+  
+  onUpdate(cloud: Cloud, callback: (cloud: Cloud) => void): void {
+    callback(this.toCloud(cloud));
+  }
 
-  toBillow() {
+  toCloud(cloud: Cloud): Cloud {
+    return new Cloud(
+      this.toBillow(),
+      cloud.lighting
+    );
+  }
+
+  private toBillow() {
     return new Billow(
       this.resolution.value,
       this.worleySeed.value,

@@ -1,17 +1,17 @@
 import { Interactable } from "./utils/interactable/interactable.ts"
-import { BillowInteractable } from "./utils/interactable/cloud/billowInteractable";
-import { LightingInteractable } from "./utils/interactable/cloud/lightingInteractable";
-
-export type onUpdateInteractable = (data: BillowInteractable | LightingInteractable) => void
+import { Cloud } from "../domain/cloud/cloud.ts";
+import { BillowInteractable } from "./utils/interactable/cloud/billowInteractable.ts";
+import { LightingInteractable } from "./utils/interactable/cloud/lightingInteractable.ts";
+import { Accessor } from "solid-js";
 
 function Folder(props: {
   title: string, 
-  interactable: BillowInteractable | LightingInteractable, 
-  onUpdate: onUpdateInteractable
+  interactable: BillowInteractable | LightingInteractable,
+  cloud: Accessor<Cloud>,
+  onUpdate: (cloud: Cloud) => void
   }) {
-  const { title, interactable, onUpdate } = props;
+  const { title, interactable, cloud, onUpdate } = props;
   const details: { [key: string]: Interactable<any> } = {...interactable};
-
   return (
   <>
       <li class="folder">
@@ -20,7 +20,9 @@ function Folder(props: {
               <h2>{title}</h2>
           </label>
           <div class="details">
-              {Object.keys(details).map(key => (<Item key={key} interactable={details[key]} onUpdate={() => onUpdate(interactable)}/>)) }
+              {Object.keys(details).map(key => (
+                <Item key={key} interactable={details[key]} onUpdate={() => interactable.onUpdate(cloud(), onUpdate)}/>)) 
+              }
           </div>
       </li>
   </>

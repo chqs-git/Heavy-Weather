@@ -29,7 +29,7 @@ export function Scene(width: number, height: number, canvas: HTMLCanvasElement, 
     // raymarching clouds: post-process pass 
     const cloudTex = VoxelMaptoTexture(CloudGenerator(), scene);
     const blueNoiseTex = new BABYLON.Texture('./resources/BlueNoise.png', scene);
-    setupShader(camera, new BABYLON.Vector2(width, height), boundsMin, boundsMax, cloud(), cloudTex, blueNoiseTex);
+    setupShader(camera, new BABYLON.Vector2(width, height), boundsMin, boundsMax, cloud, cloudTex, blueNoiseTex);
     
     // animate scene
     const divFps = document.getElementById("fps")

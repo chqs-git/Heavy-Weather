@@ -1,13 +1,14 @@
 import * as BABYLON from "babylonjs";
 import { Cloud } from "../domain/cloud/cloud";
 import fragmentShader from "../shaders/cloud/cloud_fragment.glsl";
+import { Accessor } from "solid-js";
 
 export function setupShader(
     camera: BABYLON.ArcRotateCamera,
     dimensions: BABYLON.Vector2,
     boundsMin: BABYLON.Vector3,
     boundsMax: BABYLON.Vector3,
-    cloud: Cloud,
+    getCloud: Accessor<Cloud>,
     cloudTexture: BABYLON.RawTexture3D,
     blueNoiseTex: BABYLON.Texture
     ) {
@@ -17,6 +18,7 @@ export function setupShader(
     let time = 0;
     // apply postprocess
     postProcess.onApply = function(shader) {
+        const cloud = getCloud();
         time += 0.1;
         shader.setFloat("time", time);
         

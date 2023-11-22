@@ -1,8 +1,10 @@
 import { Lighting } from "../../../../domain/cloud/lighting"
 import { Color3, Vector3 } from "babylonjs"
 import { Interactable, SliderInteractable, Vector3Interactable, ColorInteractable } from "../interactable";
+import { InteractableSettings } from "./InteractableSettings";
+import { Cloud } from "../../../../domain/cloud/cloud";
 
-export class LightingInteractable {
+export class LightingInteractable implements InteractableSettings {
     scale: Interactable<number>
     densityMultiplier: Interactable<number>
     detailDensityThreshold: Interactable<number>
@@ -32,7 +34,18 @@ export class LightingInteractable {
         this.backgroundColor = new ColorInteractable(lighting.backgroundColor.toHexString());
     }
 
-    toLighting() {
+    onUpdate(cloud: Cloud, callback: (cloud: Cloud) => void): void {
+      callback(this.toCloud(cloud));
+    }
+  
+    toCloud(cloud: Cloud): Cloud {
+      return new Cloud(
+        cloud.billow,
+        this.toLighting()
+      );
+    }
+
+    private toLighting() {
       return new Lighting(
         this.scale.value,
         this.densityMultiplier.value,
